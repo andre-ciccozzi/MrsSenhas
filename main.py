@@ -44,7 +44,8 @@ with col3:
 with col4:
     use_symbols = st.checkbox("Símbolos", value=True)
 
-
+senha_gerada = ""
+erro = ""
 if st.button("Gerar Senha"):
     password = generate_password(
         length,
@@ -53,8 +54,13 @@ if st.button("Gerar Senha"):
         use_digits=use_digits,
         use_symbols=use_symbols
     )
-    st.text_input("Senha Gerada", value=password, key="senha", disabled=True)
-else:
-    st.text_input("Senha Gerada", value="", key="senha", disabled=True)
+    if password.startswith("Erro"):
+        erro = password
+    else:
+        senha_gerada = password
+
+if erro:
+    st.error(erro)
+st.text_input("Senha Gerada", value=senha_gerada, key="senha", disabled=True)
 
 st.markdown("</div>", unsafe_allow_html=True)
