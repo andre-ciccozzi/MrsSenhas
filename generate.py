@@ -19,5 +19,3 @@ def generate_password(length, use_upper=True, use_lower=True, use_digits=True, u
     
     return ''.join(random.choice(chars) for _ in range(length))
 
-senha = generate_password(16)
-print(f"Senha gerada: {senha}")
