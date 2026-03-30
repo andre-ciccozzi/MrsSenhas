@@ -2,7 +2,7 @@ import streamlit as st
 
 from generate import generate_password
 
-st.set_page_config(page_title=" Ultra Senhas", page_icon="🔒", layout="centered")
+st.set_page_config(page_title=" Gerador de Senhas do Dedé ", page_icon="🔒", layout="centered")
 
 st.markdown("""
     <style>
